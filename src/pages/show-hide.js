@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function ShowHide() {
-    return (
-        <div className="container">
-            ShowHide
-        </div>
-    )
+export default class ShowHide extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            isShow: true,
+            styles: {
+                'display': 'block'
+            }
+        }
+    }
+
+    onClick = () => {
+        this.setState({ isShow: !this.state.isShow, styles: { 'display': (this.state.isShow ? 'none' : 'block') } })
+    }
+
+    render() {
+        return (
+            <div className="container align">
+                <div>
+                    <h1 style={ this.state.styles }>ShowHide</h1>
+                </div>
+                <button onClick={ this.onClick }>{ this.state.isShow ? 'Hide' : 'Show' }</button>
+            </div>
+        )
+    }
 }

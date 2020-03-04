@@ -9,20 +9,32 @@ export default class Clock extends Component {
             minute: new Date().getMinutes(),
             second: new Date().getSeconds()
         }
+        const intervalId = 0;
     }
 
     componentDidMount() {
-        setInterval( () => {
+        this.intervalId = setInterval( () => {
             this.setState({
                 hour: new Date().getHours(),
                 minute: new Date().getMinutes(),
                 second: new Date().getSeconds()
             });
 
+            
+            if (this.state.hour < 10) {
+                this.setState ({ hour: `0${ new Date().getHours() }` })
+            } 
+            if (this.state.minute < 10) {
+                this.setState ({ minute: `0${ new Date().getMinutes() }` })
+            } 
             if (this.state.second < 10) {
                 this.setState ({ second: `0${ new Date().getSeconds() }` })
             } 
         });
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
     }
 
     render() {

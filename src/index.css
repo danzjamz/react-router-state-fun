@@ -24,3 +24,16 @@ code {
   align-items: center;
   padding: 3em;
 }
+
+.align {
+  flex-direction: column;
+}
+
+.align-text {
+  display: flex;
+}
+
+.left {
+  align-items: start;
+  justify-content: start;
+}
