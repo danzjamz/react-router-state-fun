@@ -9,8 +9,6 @@ export default class Clock extends Component {
             minute: new Date().getMinutes(),
             second: new Date().getSeconds()
         }
-
-        console.log(this.state.second)
     }
 
     componentDidMount() {
@@ -22,14 +20,14 @@ export default class Clock extends Component {
             });
 
             if (this.state.second < 10) {
-                this.setState ({ second: `0${new Date().getSeconds()}` })
+                this.setState ({ second: `0${ new Date().getSeconds() }` })
             } 
         });
     }
 
     render() {
         return (
-            <div className="container" on>
+            <div className="container">
                 { this.state.hour+ ':' + this.state.minute + ':' + this.state.second }
             </div>
         )
