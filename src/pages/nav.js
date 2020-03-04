@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Home from './home';
-
 export default class Nav extends Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <div className="nav">
