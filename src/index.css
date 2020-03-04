@@ -20,20 +20,15 @@ code {
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 3em;
 }
 
-.align {
-  flex-direction: column;
-}
-
-.align-text {
+.align-btns {
   display: flex;
-}
-
-.left {
-  align-items: start;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
 }

@@ -18,7 +18,7 @@ export default class ShowHide extends Component {
 
     render() {
         return (
-            <div className="container align">
+            <div className="container">
                 <div>
                     <h1 style={ this.state.styles }>ShowHide</h1>
                 </div>

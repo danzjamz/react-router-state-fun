@@ -5,31 +5,31 @@ export default class Align extends Component {
         super();
 
         this.state = {
-            // styles: {
-            //     'display': 'flex',
-            //     'justify-content': 'center'
-            // }
+            styles: {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            },
             className: 'center'
         }
     }
 
     left = () => {
-        // this.setState({ styles: { 'justify-content': 'start' } });
-        this.setState({ className: 'left' })
+        this.setState({ styles: { display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start' } });
     }
 
     center = () => {
-        this.setState({ styles: { 'justify-content': 'center' } });
+        this.setState({ styles: { display: 'flex', justifyContent: 'center', alignItems: 'center' } });
     }
 
     right = () => {
-        this.setState({ styles: { 'justify-content': 'end' } });
+        this.setState({ styles: { display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end' } });
     }
 
     render() {
         return (
-            <div className="container align">
-                <div className={'align-text ' + this.state.className }>
+            <div>
+                <div className='align' style={ this.state.styles }>
                     Align
                 </div>
                 <div className="align-btns">
